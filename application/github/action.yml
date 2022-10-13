@@ -5,7 +5,7 @@ author: Heronlabs
 description: Publish Lambda image
 
 inputs:
-AWS_ACCESS_KEY_ID:
+  AWS_ACCESS_KEY_ID:
     description: inputs.AWS_ACCESS_KEY_ID
     required: true
   AWS_SECRET_ACCESS_KEY:
