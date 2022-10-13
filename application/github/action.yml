@@ -5,14 +5,20 @@ author: Heronlabs
 description: Publish Lambda image
 
 inputs:
-  AWS_ACCESS_KEY_ID:
+AWS_ACCESS_KEY_ID:
     description: inputs.AWS_ACCESS_KEY_ID
     required: true
   AWS_SECRET_ACCESS_KEY:
     description: inputs.AWS_SECRET_ACCESS_KEY
     required: true
+  AWS_ROLE_TO_ASSUME:
+    description: inputs.AWS_ROLE_TO_ASSUME
+    required: true
   AWS_REGION:
     description: inputs.AWS_REGION
+    required: true
+  AWS_ROLE_DURATION_SECONDS:
+    description: inputs.AWS_ROLE_DURATION_SECONDS
     required: true
   LAMBDA_IMAGE:
     description: inputs.LAMBDA_IMAGE
@@ -30,6 +36,9 @@ runs:
         aws-region: ${{ inputs.AWS_REGION }}
         aws-access-key-id: ${{ inputs.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ inputs.AWS_SECRET_ACCESS_KEY }}
+        role-to-assume: ${{ inputs.AWS_ROLE_TO_ASSUME }}
+        role-duration-seconds: ${{ inputs.AWS_ROLE_DURATION_SECONDS }}
+        role-session-name: publish-iac-action-session
 
     - name: '[PUBLISH] | Publish image on AWS Lambda function'
       shell: bash
