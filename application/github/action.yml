@@ -2,7 +2,7 @@ name: publish-lambda-action
 
 author: Heronlabs
 
-description: Publish Lambda image
+description: Publish Lambda
 
 inputs:
   AWS_ACCESS_KEY_ID:
@@ -43,8 +43,8 @@ runs:
     - name: '[PUBLISH] | Publish image on AWS Lambda function'
       shell: bash
       run: |
-         chmod +x ./publish-lambda-action/core/publish-lambda-bucket.sh
-         ./publish-lambda-action/core/publish-lambda-bucket.sh
+         chmod +x ./publish-lambda-action/core/publish-lambda.sh
+         ./publish-lambda-action/core/publish-lambda.sh
       env:
         LAMBDA_IMAGE: ${{ inputs.LAMBDA_IMAGE }}
         LAMBDA_NAME:  ${{ inputs.LAMBDA_NAME }}
