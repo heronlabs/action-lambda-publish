@@ -40,11 +40,11 @@ runs:
         role-duration-seconds: ${{ inputs.AWS_ROLE_DURATION_SECONDS }}
         role-session-name: publish-iac-action-session
 
-    - name: '[PUBLISH] | Publish image on AWS Lambda function'
+    - name: '[PUBLISH] | Publish AWS Lambda function'
       shell: bash
       run: |
-         chmod +x ./publish-lambda-action/core/publish-lambda.sh
-         ./publish-lambda-action/core/publish-lambda.sh
+        chmod +x ./publish-lambda-action/core/publish-lambda.sh
+        ./publish-lambda-action/core/publish-lambda.sh
       env:
         LAMBDA_IMAGE: ${{ inputs.LAMBDA_IMAGE }}
         LAMBDA_NAME:  ${{ inputs.LAMBDA_NAME }}
