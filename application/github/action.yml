@@ -31,7 +31,7 @@ runs:
   using: composite
   steps:
     - name: '[PUBLISH] | Configure AWS Credentials'
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-region: ${{ inputs.AWS_REGION }}
         aws-access-key-id: ${{ inputs.AWS_ACCESS_KEY_ID }}
@@ -47,4 +47,4 @@ runs:
         ./publish-lambda-action/core/publish-lambda.sh
       env:
         LAMBDA_IMAGE: ${{ inputs.LAMBDA_IMAGE }}
-        LAMBDA_NAME:  ${{ inputs.LAMBDA_NAME }}
+        LAMBDA_NAME: ${{ inputs.LAMBDA_NAME }}
