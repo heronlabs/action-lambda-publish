@@ -34,9 +34,7 @@ runs:
 
     - name: '[PUBLISH] | Publish AWS Lambda function'
       shell: bash
-      run: |
-        chmod +x ./publish-lambda-action/core/publish-lambda.sh
-        ./publish-lambda-action/core/publish-lambda.sh
+      run: bash ${{ github.action_path }}/core/publish-lambda.sh
       env:
         LAMBDA_IMAGE: ${{ inputs.LAMBDA_IMAGE }}
         LAMBDA_NAME: ${{ inputs.LAMBDA_NAME }}
