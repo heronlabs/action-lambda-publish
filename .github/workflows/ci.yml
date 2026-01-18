@@ -2,6 +2,7 @@ name: '[ CI ] | Continuous Integration'
 
 on:
   push:
+    branches: [main]
   workflow_dispatch:
     inputs:
       spec:
