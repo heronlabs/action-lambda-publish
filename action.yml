@@ -24,15 +24,14 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: '[PUBLISH] | Configure AWS Credentials'
-      uses: aws-actions/configure-aws-credentials@v5
+    - uses: aws-actions/configure-aws-credentials@v5
       with:
         aws-region: ${{ inputs.AWS_REGION }}
         role-to-assume: ${{ inputs.AWS_ROLE_TO_ASSUME }}
         role-duration-seconds: ${{ inputs.AWS_ROLE_DURATION_SECONDS }}
         role-session-name: publish-lambda-action-session
 
-    - name: '[PUBLISH] | Publish AWS Lambda function'
+    - name: 'Publish AWS Lambda function'
       shell: bash
       run: bash ${{ github.action_path }}/core/publish-lambda.sh
       env:
