@@ -19,12 +19,11 @@ permissions:
 
 jobs:
   ci:
-    name: Validate
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
 
-      - uses: ludeeus/action-shellcheck@v2
+      - uses: ludeeus/action-shellcheck@v2.0.0
         with:
           scandir: './core'
 
