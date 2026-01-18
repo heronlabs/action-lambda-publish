@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: ludeeus/action-shellcheck@v2.0.0
+      - uses: ludeeus/action-shellcheck@master
         with:
           scandir: './core'
 
