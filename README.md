@@ -1,4 +1,6 @@
-# publish-lambda-action
+# Publish Lambda Action
+
+[![CI](https://github.com/heronlabs/publish-lambda-action/actions/workflows/ci.yml/badge.svg)](https://github.com/heronlabs/publish-lambda-action/actions/workflows/ci.yml)
 
 A GitHub Action to deploy container images to AWS Lambda functions using OIDC authentication.
 
