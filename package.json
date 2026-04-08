@@ -1,6 +1,6 @@
 {
   "name": "publish-lambda-action",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "GitHub Action to update AWS lambda",
   "private": true,
   "repository": {
