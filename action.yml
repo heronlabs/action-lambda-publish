@@ -1,4 +1,4 @@
-name: publish-lambda-action
+name: action-lambda-publish
 
 author: Heron Labs
 
@@ -29,7 +29,7 @@ runs:
         aws-region: ${{ inputs.AWS_REGION }}
         role-to-assume: ${{ inputs.AWS_ROLE_TO_ASSUME }}
         role-duration-seconds: ${{ inputs.AWS_ROLE_DURATION_SECONDS }}
-        role-session-name: publish-lambda-action-session
+        role-session-name: action-lambda-publish-session
 
     - name: 'Publish AWS Lambda function'
       shell: bash

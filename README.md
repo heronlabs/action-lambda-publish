@@ -1,6 +1,6 @@
 # Publish Lambda Action
 
-[![CI](https://github.com/heronlabs/publish-lambda-action/actions/workflows/ci.yml/badge.svg)](https://github.com/heronlabs/publish-lambda-action/actions/workflows/ci.yml)
+[![CI](https://github.com/heronlabs/action-lambda-publish/actions/workflows/ci.yml/badge.svg)](https://github.com/heronlabs/action-lambda-publish/actions/workflows/ci.yml)
 
 A GitHub Action to deploy container images to AWS Lambda functions using OIDC authentication.
 
@@ -82,7 +82,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Lambda
-        uses: heronlabs/publish-lambda-action@v1
+        uses: heronlabs/action-lambda-publish@v1
         with:
           AWS_ROLE_TO_ASSUME: arn:aws:iam::123456789012:role/github-actions-lambda-deploy
           AWS_REGION: us-east-1
@@ -137,7 +137,7 @@ jobs:
 
       # Deploy to Lambda using this action
       - name: Deploy to Lambda
-        uses: heronlabs/publish-lambda-action@v1
+        uses: heronlabs/action-lambda-publish@v1
         with:
           AWS_ROLE_TO_ASSUME: arn:aws:iam::123456789012:role/github-actions-lambda-deploy
           AWS_REGION: ${{ env.AWS_REGION }}
@@ -175,7 +175,7 @@ jobs:
             role_arn: arn:aws:iam::222222222222:role/github-actions-lambda-deploy
     steps:
       - name: Deploy to ${{ matrix.environment }}
-        uses: heronlabs/publish-lambda-action@v1
+        uses: heronlabs/action-lambda-publish@v1
         with:
           AWS_ROLE_TO_ASSUME: ${{ matrix.role_arn }}
           AWS_REGION: us-east-1

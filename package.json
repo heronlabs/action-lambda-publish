@@ -1,11 +1,11 @@
 {
-  "name": "publish-lambda-action",
+  "name": "action-lambda-publish",
   "version": "1.0.6",
   "description": "GitHub Action to update AWS lambda",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heronlabs/publish-lambda-action.git"
+    "url": "git+https://github.com/heronlabs/action-lambda-publish.git"
   },
   "author": "Heron Labs",
   "license": "MIT",
