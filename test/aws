@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Minimal `aws` stub for action-lambda-publish offline tests.
+#
+# Emulates only the aws surface the action uses:
+#   aws lambda update-function-code --function-name N --image-uri URI  -> no-op (exit 0)
+#
+# Every invocation is appended (one line, full argv) to $AWS_LOG so tests can assert
+# which subcommands ran and with which flags. No network, no real AWS.
+set -euo pipefail
+
+: "${AWS_LOG:?AWS_LOG must point at a log file}"
+printf 'aws %s\n' "$*" >>"$AWS_LOG"
+
+case "${1:-} ${2:-}" in
+  "lambda update-function-code") : ;;
+  *) printf 'aws stub: unhandled argv: %s\n' "$*" >&2; exit 1 ;;
+esac
