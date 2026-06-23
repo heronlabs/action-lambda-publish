@@ -1,6 +1,6 @@
 # Lambda Publish Action
 
-[![CI](https://github.com/heronlabs/action-lambda-publish/actions/workflows/ci.yml/badge.svg)](https://github.com/heronlabs/action-lambda-publish/actions/workflows/ci.yml)
+[![CI](https://github.com/heronlabs/action-lambda-publish/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/heronlabs/action-lambda-publish/actions/workflows/continuous-integration.yml)
 
 > Update an existing container-image AWS Lambda function to a new image via OIDC.
 
