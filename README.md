@@ -1,10 +1,20 @@
-# Lambda Publish Action
+# ⚡ action-lambda-publish — Update an existing container-image AWS Lambda function.
 
 [![CI](https://github.com/heronlabs/action-lambda-publish/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/heronlabs/action-lambda-publish/actions/workflows/continuous-integration.yml)
 
 > Update an existing container-image AWS Lambda function to a new image via OIDC.
 
 Assumes an IAM role with OIDC (no long-lived AWS secrets) and points the target Lambda at a new container image. The function must already exist; this action updates its code only.
+
+## Contents
+
+- [Usage](#usage)
+- [Inputs](#inputs)
+- [Outputs](#outputs)
+- [Permissions](#permissions)
+- [How it works](#how-it-works)
+- [Notes](#notes)
+- [License](#license)
 
 ## Usage
 
@@ -99,6 +109,13 @@ Least-privilege permission policy on the assumed role:
 ```
 
 </details>
+
+## How it works
+
+This composite action assumes an IAM role via OIDC (no static credentials) and runs `aws lambda update-function-code` with the supplied container image URI against the target function. The single shell script at `core/publish-lambda.sh` performs the update:
+
+1. **Assume role** — `aws-actions/configure-aws-credentials` handles the OIDC exchange with the given `AWS_ROLE_TO_ASSUME`.
+2. **Update function code** — `aws lambda update-function-code --function-name <LAMBDA_NAME> --image-uri <LAMBDA_IMAGE>` points the function at the new container image.
 
 ## Notes
 
