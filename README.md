@@ -1,4 +1,4 @@
-# 🥁 action-lambda-publish — Update an existing container-image AWS Lambda function.
+# ⚡ action-lambda-publish — Update an existing container-image AWS Lambda function.
 
 [![CI](https://github.com/heronlabs/action-lambda-publish/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/heronlabs/action-lambda-publish/actions/workflows/continuous-integration.yml)
 
