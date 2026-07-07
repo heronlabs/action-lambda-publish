@@ -1,8 +1,10 @@
-# ⚡ action-lambda-publish — Update an existing container-image AWS Lambda function.
+# ⚡ action-lambda-publish — Update Lambda container image
 
-[![CI](https://github.com/heronlabs/action-lambda-publish/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/heronlabs/action-lambda-publish/actions/workflows/continuous-integration.yml)
+[![CI][ci-badge]][ci-url]
+[![License: MIT][license-badge]][license-url]
+[![GitHub Marketplace][marketplace-badge]][marketplace-url]
 
-> Update an existing container-image AWS Lambda function to a new image via OIDC.
+> **GitHub Action** to update an existing container-image AWS Lambda function to a new image via OIDC.
 
 Assumes an IAM role with OIDC (no long-lived AWS secrets) and points the target Lambda at a new container image. The function must already exist; this action updates its code only.
 
@@ -144,3 +146,10 @@ This composite action assumes an IAM role via OIDC (no static credentials) and r
 ## License
 
 MIT
+
+[ci-badge]: https://github.com/heronlabs/action-lambda-publish/actions/workflows/continuous-integration.yml/badge.svg
+[ci-url]: https://github.com/heronlabs/action-lambda-publish/actions/workflows/continuous-integration.yml
+[license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
+[license-url]: ./LICENSE
+[marketplace-badge]: https://img.shields.io/badge/GitHub-Marketplace-green.svg
+[marketplace-url]: https://github.com/marketplace/actions/action-lambda-publish
