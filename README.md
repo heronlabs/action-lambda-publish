@@ -113,12 +113,18 @@ Least-privilege permission policy on the assumed role:
 
 ## Architecture
 
-```mermaid
-graph TD
-    A[action.yml] --> B[core/publish-lambda.sh]
-    B --> C[tests/action.bats]
-    C --> D[Makefile]
-    D --> E[version.txt]
+Bash shell script wrapped by a composite GitHub Action.
+
+```
+├── action.yml                    # Composite action definition
+├── core/
+│   └── publish.sh                # CLI entry point — Lambda image update
+├── tests/
+│   ├── __mocks__/
+│   │   └── aws                   # AWS CLI stub (records invocations)
+│   └── action.bats               # BATS tests
+├── Makefile                      # test (bats) + lint (shellcheck)
+└── version.txt                   # Current version
 ```
 
 ## How it works

@@ -1,11 +1,11 @@
 #!/usr/bin/env bats
-# bats tests for core/publish-lambda.sh
+# bats tests for core/publish.sh
 #
 # Uses the `aws` stub to capture CLI invocations and asserts on exit codes
 # and logged arguments. No network, no real AWS.
 
 setup() {
-  SCRIPT="$BATS_TEST_DIRNAME/../core/publish-lambda.sh"
+  SCRIPT="$BATS_TEST_DIRNAME/../core/publish.sh"
   STUB_DIR="$BATS_TEST_DIRNAME/__mocks__"   # contains the `aws` stub
 
   # Keep runs deterministic regardless of the caller's shell.
