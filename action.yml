@@ -32,7 +32,7 @@ runs:
         role-duration-seconds: ${{ inputs.AWS_ROLE_DURATION_SECONDS }}
         role-session-name: action-lambda-publish-session
 
-    - name: 'Publish AWS Lambda function'
+    - name: 'Publish to Lambda'
       shell: bash
       run: bash ${{ github.action_path }}/core/publish.sh
       env:
