@@ -2,29 +2,30 @@ name: action-lambda-publish
 
 author: Heron Labs
 
-description: Publish Lambda
+description: Update an AWS Lambda function container image to publish a new version.
 
 inputs:
   AWS_ROLE_TO_ASSUME:
-    description: inputs.AWS_ROLE_TO_ASSUME
+    description: "ARN of the IAM role to assume via OIDC."
     required: true
   AWS_REGION:
-    description: inputs.AWS_REGION
+    description: "AWS region where the Lambda function lives."
     required: true
   AWS_ROLE_DURATION_SECONDS:
-    description: inputs.AWS_ROLE_DURATION_SECONDS
+    description: "Duration in seconds for the assumed role session."
     required: true
   LAMBDA_IMAGE:
-    description: inputs.LAMBDA_IMAGE
+    description: "Full ECR image URI for the Lambda function (e.g., 123456789.dkr.ecr.us-east-1.amazonaws.com/my-image:tag)."
     required: true
   LAMBDA_NAME:
-    description: inputs.LAMBDA_NAME
+    description: "Name of the AWS Lambda function to update."
     required: true
 
 runs:
   using: composite
   steps:
-    - uses: aws-actions/configure-aws-credentials@e7f100cf4c008499ea8adda475de1042d6975c7b # v6.2.0
+    - name: 'Configure AWS Credentials'
+      uses: aws-actions/configure-aws-credentials@254c19bd240aabef8777f48595e9d2d7b972184b # v6.2.1
       with:
         aws-region: ${{ inputs.AWS_REGION }}
         role-to-assume: ${{ inputs.AWS_ROLE_TO_ASSUME }}
