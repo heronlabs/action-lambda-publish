@@ -12,6 +12,7 @@ Assumes an IAM role with OIDC (no long-lived AWS secrets) and points the target 
 - [Inputs](#inputs)
 - [Outputs](#outputs)
 - [Permissions](#permissions)
+- [Architecture](#architecture)
 - [How it works](#how-it-works)
 - [Notes](#notes)
 - [License](#license)
@@ -109,6 +110,22 @@ Least-privilege permission policy on the assumed role:
 ```
 
 </details>
+
+## Architecture
+
+Bash shell script wrapped by a composite GitHub Action.
+
+```
+├── action.yml                    # Composite action definition
+├── core/
+│   └── publish.sh                # CLI entry point — Lambda image update
+├── tests/
+│   ├── __mocks__/
+│   │   └── aws                   # AWS CLI stub (records invocations)
+│   └── action.bats               # BATS tests
+├── Makefile                      # test (bats) + lint (shellcheck)
+└── version.txt                   # Current version
+```
 
 ## How it works
 
