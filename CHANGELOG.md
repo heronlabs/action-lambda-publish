@@ -1,3 +1,9 @@
+## v3.0.15 (2026-07-09)
+
+### Reverts
+
+* revert: restore version to 3.0.14 (b45fc81a3a17e91a7deafaf7347954a04d9847c0)
+
 ## v6.0.0 (2026-07-09)
 
 ### ⚠ BREAKING CHANGES
