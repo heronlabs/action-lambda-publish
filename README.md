@@ -131,7 +131,7 @@ Bash shell script wrapped by a composite GitHub Action.
 
 ## How it works
 
-This composite action assumes an IAM role via OIDC (no static credentials) and runs `aws lambda update-function-code` with the supplied container image URI against the target function. The single shell script at `core/publish-lambda.sh` performs the update:
+This composite action assumes an IAM role via OIDC (no static credentials) and runs `aws lambda update-function-code` with the supplied container image URI against the target function. The single shell script at `core/publish.sh` performs the update:
 
 1. **Assume role** — `aws-actions/configure-aws-credentials` handles the OIDC exchange with the given `AWS_ROLE_TO_ASSUME`.
 2. **Update function code** — `aws lambda update-function-code --function-name <LAMBDA_NAME> --image-uri <LAMBDA_IMAGE>` points the function at the new container image.
